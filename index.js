@@ -1,15 +1,11 @@
-let num = prompt("Enter your Mark")
+let letter = prompt("Enter a letter")
 
-if(num >80)
-    console.log("A+");
-else if(num>60)
-        console.log("A");
-    else if(num>50)
-            console.log("A-");
-        else if(num>44)
-                console.log("B");
-            else if(num<30)
-                console.log("F +");
-            else
-                console.log("F ++");
+letter =letter.toLowerCase();
 
+if(letter== "a" || letter=="e" || letter=="i" || letter=="o" || letter=="u")
+{
+    console.log("Vowel");
+}
+else{
+    console.log("Consonent");
+}
