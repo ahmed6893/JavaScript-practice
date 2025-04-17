@@ -35,25 +35,39 @@
 //     default:
 //         console.log("NOt a digit")
 // }
-let number = prompt("Enter Your Letter");
+// let number = prompt("Enter Your Letter");
 
-switch(number)
-{
-        case "a":
-            console.log("Letter is vowel");
-            break
-        case "e":
-            console.log("Letter is vowel");
-            break
-        case "i":
-            console.log("Letter is vowel");
-            break
-        case "o":
-            console.log("Letter is vowel");
-            break
-        case "u":
-            console.log("Letter is vowel");
-            break
-            default:
-                console.log("Letter is Consonant")
+// switch(number)
+// {
+//         case "a":
+//             console.log("Letter is vowel");
+//             break
+//         case "e":
+//             console.log("Letter is vowel");
+//             break
+//         case "i":
+//             console.log("Letter is vowel");
+//             break
+//         case "o":
+//             console.log("Letter is vowel");
+//             break
+//         case "u":
+//             console.log("Letter is vowel");
+//             break
+//             default:
+//                 console.log("Letter is Consonant")
+// }
+
+    let y= 1;
+    let sum=0
+    while( y <= 100 ){
+
+        if(i % 3 == 0 && i % 5 ==0)
+        {
+            sum =sum + y;
+        }
+
+        y = y + 1;
 }
+document.write(sum);
+    
