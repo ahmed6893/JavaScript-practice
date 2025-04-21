@@ -77,21 +77,22 @@
 //         y = y + 1;
 // }
 // document.write(sum);
-document.write("practice")
-for(i=1;i<=100;i++)
-{
-    document.write(' '+i);
-    if(i%3== 0 && i%5 == 0)
-    {
-        document.write('FizzBuzz')
-    }
-    else if(i%5 == 0)
-    {
-        document.write("BUzz")
-    }
-    else if( i%3 == 0)
-    {
-        document.write("Fizz")
-    }
+// document.write("practice")
+// for(i=1;i<=100;i++)
+// {
+//     document.write(' '+i);
+//     if(i%3== 0 && i%5 == 0)
+//     {
+//         document.write('FizzBuzz')
+//     }
+//     else if(i%5 == 0)
+//     {
+//         document.write("BUzz")
+//     }
+//     else if( i%3 == 0)
+//     {
+//         document.write("Fizz")
+//     }
  
-}
+// }
+
