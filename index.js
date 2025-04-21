@@ -20,3 +20,33 @@
 // {
 //     console.log(user +"Oh no Your saving arent very well ->" + savings) 
 // }
+
+
+
+// let y=10 ;
+// do{
+//     document.write("I love You");
+//     y++;
+// }while(y<=100);
+
+for(let i=1;i<=100;i++)
+    {
+    
+        if(i==10)
+        {
+            continue;
+        }
+        document.write(" "+i)
+    }
+    document.write('End')
+
+
+for(let i=1;i<=100;i++)
+        {
+        
+            if(i==10)
+            {
+                break;
+            }
+            document.write(" "+i)
+        }

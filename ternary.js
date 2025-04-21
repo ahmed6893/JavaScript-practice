@@ -35,6 +35,11 @@
 //     default:
 //         console.log("NOt a digit")
 // }
+
+
+
+
+
 // let number = prompt("Enter Your Letter");
 
 // switch(number)
@@ -58,16 +63,35 @@
 //                 console.log("Letter is Consonant")
 // }
 
-    let y= 1;
-    let sum=0
-    while( y <= 100 ){
 
-        if(i % 3 == 0 && i % 5 ==0)
-        {
-            sum =sum + y;
-        }
 
-        y = y + 1;
+//     let y= 1;
+//     let sum=0
+//     while( y <= 100 ){
+
+//         if(y % 3 == 0 && y % 5 ==0)
+// {
+//             sum =sum + y;
+//         }
+
+//         y = y + 1;
+// }
+// document.write(sum);
+document.write("practice")
+for(i=1;i<=100;i++)
+{
+    document.write(' '+i);
+    if(i%3== 0 && i%5 == 0)
+    {
+        document.write('FizzBuzz')
+    }
+    else if(i%5 == 0)
+    {
+        document.write("BUzz")
+    }
+    else if( i%3 == 0)
+    {
+        document.write("Fizz")
+    }
+ 
 }
-document.write(sum);
-    
