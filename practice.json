@@ -1,0 +1,23 @@
+
+    "friends":[
+        {
+            "name":"Anis",
+            "age":25
+        },
+        {
+            "name":"Rahul",
+            "age":26
+        }
+    ],
+
+
+
+"Students":[
+    {
+        "name":"Ahmed",
+        "age":1,
+        "cgpa":5 ,
+        "language":["Bangla","English"],
+        "frends":2
+    }
+]
