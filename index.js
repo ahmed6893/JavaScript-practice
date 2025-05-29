@@ -305,3 +305,8 @@
 // document.write("YOu have won total"+numberOfWin+"</br>");
 // document.write("You have lost total"+numberOflos);
 
+//data access
+const data =fetch("./practice.json")
+
+delete data.friends[0].name ;
+console.log(data.friends[0].name);
