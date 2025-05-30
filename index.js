@@ -309,4 +309,5 @@
 const data =fetch("./practice.json")
 
 delete data.friends[0].name ;
+data.friends[0].name = "Rahman" ;
 console.log(data.friends[0].name);
