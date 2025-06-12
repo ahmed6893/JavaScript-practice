@@ -16,7 +16,7 @@ function getExpenses(expenses)
         }
         return arrayExpenses ;
      
-}
+} 
 
 function calculateTotalExpenses(arrayExpenses)
 {
