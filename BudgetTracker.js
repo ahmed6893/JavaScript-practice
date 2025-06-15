@@ -1,4 +1,20 @@
 
+function runBUdgetTracker()
+{
+    let userBudget= {
+        user :'',
+        salary:0,
+        expenses:[],
+        arrayExpenses : [],
+        newExpenses :'',
+        tax:0,
+        netIncome:0,
+        balance:0,
+        saving:0,
+        finalStatus:0,
+    };
+}
+
 
 function getUserInput(promptMessage , isNumber = false)
 {
@@ -74,28 +90,28 @@ function getFinancialStatus(saving)
 
 function getBudgetTracker()
 {
-let user = getUserInput("Enter Your Name");
-let salary = getUserInput("Enter Your salary" , true);
-let expenses =getUserInput("How many expenses You have ?" , true);
+userBudget.user = getUserInput("Enter Your Name");
+userBudget.salary = getUserInput("Enter Your salary" , true);
+userBudget.expenses =getUserInput("How many expenses You have ?" , true);
 
 
 
-    if(isNaN(salary) || isNaN(expenses) || salary<=0 || expenses<=0)
+    if(isNaN(userBudget.salary) || isNaN(userBudget.expenses) || userBudget.salary<=0 || userBudget.expenses<=0)
     {
         document.write('Enter valid Enput')
         return; 
     }
     else{
 
-        let arrayExpenses = getExpenses(expenses);
+        userBudget.arrayExpenses = getExpenses(expenses);
 
-        let totalExpenses = calculateTotalExpenses(arrayExpenses);
+        userBudget.totalExpenses = calculateTotalExpenses(arrayExpenses);
 
 
-    const tax = salary * 0.1;
-    const netIncome = salary - tax ;
-    const balance = netIncome - totalExpenses ;
-    const saving = balance * 0.2;
+    userBudget.tax = salary * 0.1;
+    userBudget.netIncome = salary - tax ;
+    userBudget.balance = netIncome - totalExpenses ;
+    userBudget.saving = balance * 0.2;
     
     let finalStatus = getFinancialStatus(saving);
 
