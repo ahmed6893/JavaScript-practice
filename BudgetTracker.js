@@ -1,7 +1,33 @@
 
-function runBUdgetTracker()
-{
-    let userBudget= {
+// function to save data in localstorage
+function saveBudgetToLocal(){
+    localStorage.setItem('userBudget',JSON.stringify(userBudget));
+}
+
+// function to retrieve data in localstorage
+function getBudgetToLocal(){
+    const savedBudget =localStorage.getItem('userBudget');
+    return savedBudget ? JSON.parse(savedBudget): null;
+}
+// function to clear data in localstorage
+function clearBudgetToLocal(){
+    localStorage.removeItem('userBudget');
+    console.log("Data Removed")
+}
+
+function runBudgetTracker(){
+    let userBudget=getBudgetToLocal();
+
+    if(userBudget){
+        console.log('Data loaded from previos')
+        getFinalResult(userBudget);
+    }
+    else{
+        getBudgetTracker();
+    }
+}
+
+    let userBudget = {
         user :'',
         salary:0,
         expenses:[],
@@ -13,7 +39,6 @@ function runBUdgetTracker()
         saving:0,
         finalStatus:0,
     };
-}
 
 
 function getUserInput(promptMessage , isNumber = false)
@@ -44,22 +69,22 @@ function calculateTotalExpenses(arrayExpenses)
         return totalExpenses ;
 }
 
-function getFinalResult(user , salary , totalExpenses , tax , netIncome , balance , saving , finalStatus)
+function getFinalResult(userBudget)
 {
         let overSpending = '';
-    if(totalExpenses>salary)
+    if(userBudget.totalExpenses>userBudget.salary)
     {
         overSpending = 'Warning ! Your Spanding Too much';
     }
 
-    document.write("User"+user +"<br>");
-    document.write("Total Income"+salary+"<br>");
-    document.write("Total Expenses"+totalExpenses+"<br>");
-    document.write("Tax 10%"+ tax+"<br>");
-    document.write("Net Income After Tax"+netIncome+"<br>");
-    document.write("Remaining Balance"+balance+"<br>");
-    document.write("SAving 20% "+saving+"<br>");
-    document.write(finalStatus+"<br>");
+    document.write("User"+userBudget.user +"<br>");
+    document.write("Total Income"+userBudget.salary+"<br>");
+    document.write("Total Expenses"+userBudget.totalExpenses+"<br>");
+    document.write("Tax 10%"+userBudget.tax+"<br>");
+    document.write("Net Income After Tax"+userBudget.netIncome+"<br>");
+    document.write("Remaining Balance"+userBudget.balance+"<br>");
+    document.write("SAving 20% "+userBudget.saving+"<br>");
+    document.write(userBudget.finalStatus+"<br>");
     if(overSpending)
     {
         document.write(overSpending);
@@ -103,19 +128,16 @@ userBudget.expenses =getUserInput("How many expenses You have ?" , true);
     }
     else{
 
-        userBudget.arrayExpenses = getExpenses(expenses);
-
-        userBudget.totalExpenses = calculateTotalExpenses(arrayExpenses);
-
-
-    userBudget.tax = salary * 0.1;
-    userBudget.netIncome = salary - tax ;
-    userBudget.balance = netIncome - totalExpenses ;
-    userBudget.saving = balance * 0.2;
+    userBudget.arrayExpenses = getExpenses(userBudget.expenses);
+    userBudget.totalExpenses = calculateTotalExpenses(userBudget.arrayExpenses);
+    userBudget.tax = userBudget.salary * 0.1;
+    userBudget.netIncome = userBudget.salary - userBudget.tax ;
+    userBudget.balance = userBudget.netIncome - userBudget.totalExpenses ;
+    userBudget.saving = userBudget.balance * 0.2;
     
-    let finalStatus = getFinancialStatus(saving);
+    let finalStatus = getFinancialStatus(userBudget.saving);
 
-     getFinalResult(user , salary , totalExpenses , tax , netIncome , balance , saving , finalStatus);
+     getFinalResult(userBudget);
 }
 
    
